@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terraria Mod Roadmap Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Global Fandom Bar -->
+  <header class="global-navigation">
+    <div class="gn-left">
+      <div class="gn-logo">T</div>
+      <div class="gn-title">Terraria Mod Roadmap</div>
+    </div>
+    
+    <div class="gn-search search-container">
+      <input type="text" id="search-input" placeholder="Search Terraria Mod Roadmap Wiki" aria-label="Search">
+      <div id="search-results" class="search-results hidden"></div>
+    </div>
+    
+    <div class="gn-right">
+      <a href="#">Sign In</a>
+      <a href="#">Register</a>
+    </div>
+  </header>
+
+  <!-- Local Wiki Navigation -->
+  <nav class="local-navigation">
+    <div class="ln-tabs">
+      <a href="#/" class="ln-tab" data-tab="home">Explore</a>
+      <a href="#/melee" class="ln-tab" data-tab="melee">Melee</a>
+      <a href="#/summoner" class="ln-tab" data-tab="summoner">Summoner</a>
+      <a href="#" class="ln-tab">About</a>
+      <a href="#" class="ln-tab">Random Page</a>
+    </div>
+  </nav>
+
+  <div id="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">NAVIGATION</div>
+        <hr class="sidebar-hr">
+        <nav class="class-nav">
+          <button class="sidebar-link class-btn" data-class="home" onclick="window.location.hash='#/'">🏠 Home</button>
+          <button class="sidebar-link class-btn" data-class="melee">⚔️ Melee</button>
+          <button class="sidebar-link class-btn" data-class="summoner">🔮 Summoner</button>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">CONTENT</div>
+        <hr class="sidebar-hr">
+        <nav class="class-nav">
+          <a href="#/database" class="sidebar-link class-btn" data-class="database">🎒 Item Database</a>
+          <a href="#/bosses" class="sidebar-link class-btn" data-class="bosses">💀 Boss List</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">FILTERS</div>
+        <hr class="sidebar-hr">
+        <div class="settings">
+          <label class="sidebar-link"><input type="checkbox" id="filter-spoilers"> Hide Boss Spoilers</label>
+          <label class="sidebar-link"><input type="checkbox" id="filter-recommended"> Show Only Recommended</label>
+          <label class="sidebar-link"><input type="checkbox" id="filter-vanilla"> Hide Vanilla Items</label>
+            <label class="sidebar-link"><input type="checkbox" id="filter-ucw"> Hide Unofficial Calamity Whips</label>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">DIFFICULTY</div>
+        <hr class="sidebar-hr">
+        <div class="settings">
+          <label for="difficulty-select" class="sr-only">Difficulty</label>
+          <select id="difficulty-select" class="sidebar-select">
+            <option value="Normal">Normal</option>
+            <option value="Revengeance">Revengeance</option>
+            <option value="Death">Death</option>
+            <option value="Infernum" selected>Infernum</option>
+              <option value="Eternity">Eternity (Fargo's)</option>
+              <option value="Masochist">Masochist (Fargo's)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">TOOLS</div>
+        <hr class="sidebar-hr">
+        <nav class="class-nav">
+          <a href="#" class="sidebar-link">🔗 GitHub Repo</a>
+          <a href="#" class="sidebar-link">📖 About This Guide</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="breadcrumbs-container">
+        <div class="breadcrumbs" id="breadcrumbs">Home</div>
+      </div>
+
+      <!-- Home View -->
+      <div id="home-view" class="view active">
+        <div class="home-hero">
+          <h1>Terraria Progression Guide</h1>
+          <p>The ultimate roadmap covering Calamity Mod, Infernum Mode, and Fargo's Souls Mod. Designed for the hardest difficulties.</p>
+        </div>
+        
+        <div class="home-layout">
+          <div class="home-main">
+            <div class="home-cards">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+          
+          <aside class="home-side">
+            <div class="info-box home-about-box">
+              <h3>About This Guide</h3>
+              <p>This project maps the progression of a max-difficulty Terraria playthrough. It assumes you have all endgame content enabled. Choose a class to begin.</p>
+            </div>
+            <div class="info-box home-quick-links">
+              <h3>Top 5 Recommended</h3>
+              <ul id="quick-links-list">
+                <!-- Populated by JS -->
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Roadmap View -->
+      <div id="roadmap-view" class="view">
+        <div class="roadmap-layout">
+          <div class="roadmap-main">
+            <div class="roadmap-header">
+              <h1 id="class-title">Class Name</h1>
+              <p id="class-desc">Class Description</p>
+            </div>
+            <div id="stages-container" class="stages-timeline">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+          
+          <!-- Right Rail Infoboxes -->
+          <aside class="roadmap-infobox-container">
+            <div class="sticky-infobox">
+              <div class="info-box class-overview">
+                <div class="ib-icon" id="info-class-icon">вљ”пёЏ</div>
+                <h3 id="info-class-name">MELEE</h3>
+                <hr class="ib-hr">
+                <div class="info-row"><span>Difficulty:</span> <span id="info-difficulty">Normal</span></div>
+                <div class="info-row"><span>Stage:</span> <span id="info-stage">1 / 18</span></div>
+                <div class="info-row"><span>Class Color:</span> <span id="info-color-badge">🔴</span></div>
+                <hr class="ib-hr">
+                <div class="info-center"><a href="#" onclick="window.scrollTo(0,0); return false;">[Jump to Top ↑]</a></div>
+              </div>
+              
+              <div class="info-box stage-summary">
+                <h3>Current Stage Summary</h3>
+                <hr class="ib-hr">
+                <div id="summary-stage-name" class="summary-title">Pre-Boss</div>
+                <div id="summary-bosses" class="summary-list"></div>
+                <div id="summary-items" class="summary-stats">Items: 0</div>
+              </div>
+
+              <div class="info-box related-links">
+                <h3>Related</h3>
+                <hr class="ib-hr">
+                <ul class="related-list">
+                  <li><a id="related-full-guide" href="#">Full Class Guide</a></li>
+                  <li><a href="#/bosses">Boss Order</a></li>
+                  <li><a href="#/database">Fargo's Souls Items</a></li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Item Database View -->
+      <div id="database-view" class="view">
+        <div class="roadmap-header">
+          <h1>🎒 Item Database</h1>
+          <p>Search and filter all items across the roadmap.</p>
+        </div>
+        
+        <div class="db-controls">
+          <input type="text" id="db-search" placeholder="Filter by name...">
+          
+          <div class="db-filters">
+            <label><input type="checkbox" id="db-mod-c" checked> Calamity</label>
+            <label><input type="checkbox" id="db-mod-f" checked> Fargo's</label>
+            <label><input type="checkbox" id="db-mod-v" checked> Vanilla</label>
+              <label><input type="checkbox" id="db-mod-u" checked> UCW</label>
+            
+            <label><input type="checkbox" id="db-cls-melee" checked> Melee</label>
+            <label><input type="checkbox" id="db-cls-summoner" checked> Summoner</label>
+            
+            <label><input type="checkbox" id="db-type-weapons" checked> Weapons</label>
+            <label><input type="checkbox" id="db-type-armor" checked> Armor</label>
+            <label><input type="checkbox" id="db-type-accessories" checked> Accessories</label>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="db-table" id="db-table">
+            <thead>
+              <tr>
+                <th>Icon</th>
+                <th data-sort="name">Name ↕</th>
+                <th data-sort="mod">Mod ↕</th>
+                <th data-sort="class">Class ↕</th>
+                <th data-sort="type">Type ↕</th>
+                <th data-sort="stage">Stage ↕</th>
+              </tr>
+            </thead>
+            <tbody id="db-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Boss List View -->
+      <div id="bosses-view" class="view">
+        <div class="roadmap-header">
+          <h1>💀 Boss Checklist</h1>
+          <p>Track your progression through all bosses.</p>
+          <div class="boss-progress-container">
+            <div class="boss-progress-bar-wrap">
+              <div class="boss-progress-bar" id="boss-progress-bar"></div>
+            </div>
+            <div class="boss-progress-text" id="boss-progress-text">Defeated 0 / 47 bosses (0%)</div>
+          </div>
+          <button class="home-card-btn" id="reset-bosses-btn" style="margin-top: 10px;">Reset Progress</button>
+        </div>
+        
+        <div id="boss-list-container" class="boss-cards-grid"></div>
+      </div>
+
+      <footer class="global-footer">
+        <hr>
+        <p>Terraria Mod Roadmap Wiki</p>
+        <p>This is a fan-made guide. Not affiliated with Re-Logic, Calamity Team, or Fargos Mods.</p>
+        <p>Content is community-driven and may contain spoilers.</p>
+        <p class="footer-links">
+          <a href="#">Privacy</a> В· <a href="#">About</a> В· <a href="#">Disclaimers</a> В· <a href="#">Contact</a>
+        </p>
+      </footer>
+    </main>
+
+    <!-- Quick Nav -->
+    <nav class="quick-nav" id="quick-nav"></nav>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
